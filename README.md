@@ -1,8 +1,14 @@
 # weixinxiaochengxu
 微信小程序-日常开发爬坑记录
 
-由于每个demo都是独立的组件，所以master分支及dev分支不合并代码。每次新提交的demo会以“dev-[name]-[time]”这样的格式区分开来，看官需要下载哪个demo就去对应的分支拉代码，这样做的好处就是：每个分支的代码独立且互不依赖。
+## 新增一个textarea在ios上存在bug的demo
+分支：dev-textarea-padding-bug-in-ios-20200414 
 
-每个分支中的README.md文件会用简单的话描述对应的demo是做什么的，同时也会放相应的视频用于演示问题。
+## 新增一个兼容ios手机的底部评论框
+分支：dev-textarea-fixed-bottom-20200410
 
-dev分支中的README.md 相当于一个总的列表，暂无他用，纯粹是为了显示目前已经有哪些分支罢了。
+## 新增一个使用wx.saveImageToPhotosAlbum保存图片到相册时检测权限的demo
+分支：dev-scope-writePhotosAlbum-20200406
+
+## 新增一个wx.downloadFile下载图片的demo
+分支：dev-downloadFile-20200404
