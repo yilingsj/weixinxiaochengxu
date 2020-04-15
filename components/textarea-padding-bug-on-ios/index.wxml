@@ -1,0 +1,65 @@
+<!--components/textarea-padding-bug-on-ios/index.wxml-->
+<view class="page">
+  <view class="ruler" style="width:2rpx;">2rpx</view>
+  <view class="ruler" style="width:4rpx;">4rpx</view>
+  <view class="ruler" style="width:6rpx;">6rpx</view>
+  <view class="ruler" style="width:8rpx;">8rpx</view>
+  <view class="ruler" style="width:10rpx;">10rpx</view>
+  <view class="ruler" style="width:12rpx;">12px</view>
+  <view class="ruler" style="width:14rpx;">14px</view>
+  <view class="textarea-view">
+    <textarea class="textarea" style="padding:0"></textarea>padding:0
+  </view>
+  <view class="textarea-view">
+    <textarea class="textarea" style="padding:0!important"></textarea>padding:0!important
+  </view>
+  <view class="textarea-view">
+    <textarea class="textarea" style="padding:0;text-indent:0"></textarea>text-indent:0
+  </view>
+  <view class="textarea-view">
+    <textarea class="textarea" style="padding:0;text-indent:30px!important"></textarea>text-indent:30rpx
+  </view>
+  <view class="">
+    <view style="text-indent:0">text-indent:0</view>
+    <view style="text-indent:30px">text-indent:30px</view>
+  </view>
+  <view class="textarea-view">
+    <textarea class="textarea" style="padding:2rpx"></textarea>padding:2rpx
+  </view>
+  <view class="textarea-view">
+    <textarea class="textarea" style="padding:4rpx"></textarea>padding:4rpx
+  </view>
+  <view class="mb-20">下面的是修复过的</view>
+  <view class="textarea-view">
+    <textarea class="textarea {{platform === 'ios' ? 'textarea__ios_bug' : ''}}"></textarea>设备：{{platform}}
+  </view>
+  <view class="mb-20">下面的新的问题：上内边距</view>
+  <view class="textarea-view">
+    <textarea class="textarea" style="padding-top: 0;line-height:0"></textarea>行高0
+  </view>
+  <view class="textarea-view">
+    <textarea class="textarea" style="padding-top: 0;line-height:1"></textarea>行高1
+  </view>
+  <view class="textarea-view">
+    <textarea class="textarea" style="padding-top: 0;line-height:28rpx"></textarea>行高28rpx
+  </view>
+  <view class="textarea-view">
+    <textarea class="textarea" style="padding-top: 0;line-height:32rpx"></textarea>行高32rpx
+  </view>
+  <view class="textarea-view">
+    <textarea class="textarea" style="padding-top: 0;line-height:36rpx"></textarea>行高36rpx
+  </view>
+  <view class="textarea-view">
+    <textarea class="textarea" style="padding-top: 0;line-height:40rpx"></textarea>行高40rpx
+  </view>
+  <view class="textarea-view">
+    <textarea class="textarea" style="padding-top: 0;line-height:44rpx"></textarea>行高44rpx
+  </view>
+  <view class="mb-20">上面的代码全为复现demo所用，最终的代码见下方：（当前设备：{{platform}}）</view>
+  <view class="form__item">
+    <view class="form__label">详细地址：</view>
+    <view class="form__label_content textarea-wrap {{platform === 'ios' ? 'textarea__ios_bug' : ''}}">
+      <textarea class="textarea" placeholder="请输入详细地址"></textarea>
+    </view>
+  </view>
+</view>

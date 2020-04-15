@@ -1,4 +1,5 @@
 {
   "usingComponents": {
+    "textareaPaddingBugOnIos": "/components/textarea-padding-bug-on-ios/index"
   }
 }

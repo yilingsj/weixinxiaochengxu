@@ -7,4 +7,7 @@
  -->
 <!--index.wxml-->
 <view class="">
+  <!-- textarea-ios-bug 20200414 start -->
+  <textareaPaddingBugOnIos></textareaPaddingBugOnIos>
+  <!-- textarea-ios-bug 20200414 end -->
 </view>

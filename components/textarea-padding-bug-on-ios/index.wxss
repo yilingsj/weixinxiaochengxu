@@ -1,0 +1,105 @@
+/* components/textarea-padding-bug-on-ios/index.wxss */
+view {
+  line-height: 1
+}
+
+.page {
+  padding: 20rpx
+}
+
+.ruler {
+  margin-bottom: 20rpx;
+  height: 60rpx;
+  background: #c0c;
+}
+
+.mb-20 {
+  margin-bottom: 20rpx;
+}
+
+.textarea-view {
+  display: flex;
+}
+
+.textarea-view .textarea {
+  height: 100rpx;
+  background: #c0c;
+  padding: 0rpx;
+  margin-bottom: 20rpx;
+  width: 50%;
+  margin-right: 20rpx;
+  display: block;
+  font-size: 28rpx;
+  line-height: 28rpx;
+}
+
+.textarea-view:nth-child(2n) .textarea {
+  background: #ccc;
+}
+
+/* 修复ios的padding bug start */
+.textarea__ios_bug {
+  padding: 0;
+}
+
+/* 修复ios的padding bug end */
+
+
+/* 以下为最终代码 start */
+.form__item {
+  display: flex;
+  padding: 10rpx 0;
+  border-bottom: 1rpx solid #e0e0e0;
+}
+
+.form__label {
+  width: 120rpx;
+  font-size: 28rpx;
+  line-height: 34rpx;
+  /* view行高同textarea */
+  padding-top: 8rpx;
+  /* 此处的值= padding-top - (line-height - font-size) / 2 */
+  display: block;
+}
+
+.textarea-wrap {
+  display: flex;
+  width: 100%;
+  border-radius: 10rpx;
+  position: relative;
+  overflow: hidden;
+}
+
+.textarea-wrap::after {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  border: 1px solid #e0e0e0;
+  border-radius: 20rpx;
+  transform: scale(.5);
+  transform-origin: 0 0;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+.textarea-wrap .textarea {
+  background: transparent;
+  width: 100%;
+  height: 120rpx;
+  margin: 0;
+  font-size: 28rpx;
+  padding: 10rpx;
+  /* ios端最小值 20rpx 10rpx */
+  line-height: 34rpx;
+  /* ios端最小行高*/
+}
+
+/* 修复ios上的bug start */
+.textarea__ios_bug .textarea {
+  padding: 0;
+  margin-top: -10rpx;
+}
+
+/* 修复ios上的bug end */
+/* 以下为最终代码 end */
