@@ -1,0 +1,32 @@
+<!--
+ * @Description: 
+ * @Author: yilingsj（315800015@qq.com）
+ * @Date: 2020-04-04 19:22:15
+ * @LastEditors: yilingsj（315800015@qq.com）
+ * @LastEditTime: 2020-04-04 20:32:59
+ -->
+<!--components/downloadFile/index.wxml-->
+<view style="padding:20rpx">
+  <view style="padding:20rpx">
+    <view style="line-height:1.5">说明：在生成海报时不管是使用wx.downloadFile还是使用wx.getImageInfo，一定要对点击事件进行拦截，防止用户频繁点击，因为频繁点击会进入fail导致出现弹窗。</view>
+    <view style="line-height:1.5">原文地址：http://www.yilingsj.com/xwzj/2020-04-05/weixin-downloadFile-getImageInfo.html</view>
+  </view>
+  <!-- 点击时未做拦截 start -->
+  <view>
+    <view>未做防频繁点击处理，频繁点击会多次进入fail</view>
+    <button class="button" bindtap="handleDownloadFile">wx.downloadFile</button>
+    <button class="button" bindtap="handleGetImageInfo">wx.getImageInfo</button>
+  </view>
+  <!-- 点击时未做拦截 end -->
+  <!-- 防频繁点击 start -->
+  <view>
+    <view>做了防频繁点击处理</view>
+    <button class="button {{ isDisabled ? 'is__disabled' : '' }}" bindtap="handleDownloadFile">wx.downloadFile</button>
+    <button class="button {{ isDisabled ? 'is__disabled' : '' }}" bindtap="handleGetImageInfo">wx.getImageInfo</button>
+  </view>
+  <!-- 防频繁点击 end -->
+  <view class="canvas" hover-class="none" hover-stop-propagation="false" bindtap="handleClearCanvas">
+    <canvas canvas-id="my-canvas" style="width: 750rpx; height: 670px; border: 1px solid #f00;"></canvas>
+  </view>
+  <view class="res">{{ res }}</view>
+</view>

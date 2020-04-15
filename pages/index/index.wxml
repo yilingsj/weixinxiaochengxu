@@ -7,4 +7,7 @@
  -->
 <!--index.wxml-->
 <view class="">
+  <!-- wx.downloadFile下载图片到本地 start -->
+  <downloadFile-component></downloadFile-component>
+  <!-- wx.downloadFile下载图片到本地 end -->
 </view>

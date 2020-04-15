@@ -1,4 +1,6 @@
 {
   "usingComponents": {
-  }
+    "downloadFile-component": "/components/downloadFile/index"
+  },
+  "navigationBarTitleText": "wx.downloadFile下载图片"
 }
