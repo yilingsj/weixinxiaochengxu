@@ -7,4 +7,20 @@
  -->
 <!--index.wxml-->
 <view class="">
+  <!-- 评论列表 start -->
+  <view class="evaluation-wrap">
+    <view class="evaluation__item" wx:for="{{evaluationData}}" wx:key="index">
+      <view class="evaluation__text">{{item.text}}</view>
+      <view class="evaluation__time">{{item.time}}</view>
+    </view>
+  </view>
+  <!-- 评论列表 end -->
+  <!-- 固定在底部的输入框 start -->
+  <view class="commentContent" bindtap="handleIsShowComment">
+    <view>写评论...</view>
+  </view>
+  <!-- 弹层评论框 start -->
+  <textareaFixedBottom info="{{popupEvaluation}}" bind:myeventEvaluationData="myeventEvaluationData"></textareaFixedBottom>
+  <!-- 弹层评论框 end -->
+  <!-- 固定在底部的输入框 end -->
 </view>

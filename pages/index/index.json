@@ -1,4 +1,6 @@
 {
   "usingComponents": {
-  }
+    "textareaFixedBottom": "/components/textarea-fixed-bottom/index"
+  },
+  "navigationBarTitleText": "兼容ios的底部评论框"
 }
