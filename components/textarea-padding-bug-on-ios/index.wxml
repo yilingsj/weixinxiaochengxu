@@ -1,5 +1,10 @@
 <!--components/textarea-padding-bug-on-ios/index.wxml-->
 <view class="page">
+  <view style="line-height:1.5">
+    说明：微信小程序的textarea组件在ios设备上，padding有最小值且不能被重置掉，最小值为20rpx 10rpx；line-height行高属性也有最小值，值为34rpx；为了在安卓机上和ios端尽可能实现统一样式，使用wx.getSystemInfo来判断设备，然后再利用margin的负边距来抵消差异。
+  </view>
+  <view style="line-height:1.5" class="mb-20">原文地址： http://www.yilingsj.com/xwzj/2020-04-13/weixin-textarea-padding-bug-in-ios.html
+  </view>
   <view class="ruler" style="width:2rpx;">2rpx</view>
   <view class="ruler" style="width:4rpx;">4rpx</view>
   <view class="ruler" style="width:6rpx;">6rpx</view>

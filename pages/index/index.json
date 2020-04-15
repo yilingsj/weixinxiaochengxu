@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "textareaPaddingBugOnIos": "/components/textarea-padding-bug-on-ios/index"
-  }
+  },
+  "navigationBarTitleText": "textarea-padding-bug-in-ios-20200414"
 }
