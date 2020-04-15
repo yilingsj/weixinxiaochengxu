@@ -7,6 +7,13 @@
  -->
 <!--index.wxml-->
 <view class="">
+  <view style="padding:20rpx">
+    <view style="line-height:1.5">
+      说明：此demo主要解决底部输入框偶尔会被系统键盘遮挡的bug，可直接用于实际项目中。
+    </view>
+    <view style="line-height:1.5" class="mb-20">原文地址：http://www.yilingsj.com/xwzj/2020-04-10/weixin-textarea-fixed-bottom.html
+    </view>
+  </view>
   <!-- 评论列表 start -->
   <view class="evaluation-wrap">
     <view class="evaluation__item" wx:for="{{evaluationData}}" wx:key="index">
