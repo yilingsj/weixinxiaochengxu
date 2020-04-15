@@ -7,4 +7,7 @@
  -->
 <!--index.wxml-->
 <view class="">
+  <!-- 授权保存到相册 start --> 
+  <writePhotosAlbum-component></writePhotosAlbum-component>
+  <!-- 授权保存到相册 end --> 
 </view>

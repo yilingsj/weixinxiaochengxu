@@ -1,0 +1,33 @@
+/* components/writePhotosAlbum/index.wxss */
+.canvas {
+  position: absolute;
+  left: -100%;
+  width: 750rpx;
+  height: 750rpx;
+  overflow: auto;
+  z-index: 0
+}
+
+button {
+  margin-bottom: 10px;
+  display: block;
+  width: 100% !important
+}
+
+.res {
+  word-break: break-all;
+}
+
+.canvas__img {
+  width: 400rpx;
+  margin: 0 auto;
+  display: block;
+}
+
+/* 禁用样式，防止频繁操作 start */
+.is__disabled {
+  pointer-events: none;
+  opacity: .35;
+}
+
+/* 禁用样式，防止频繁操作 end */

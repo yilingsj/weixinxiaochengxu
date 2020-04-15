@@ -1,0 +1,32 @@
+<!--
+ * @Description: 
+ * @Author: yilingsj（315800015@qq.com）
+ * @Date: 2020-04-06 13:59:44
+ * @LastEditors: yilingsj（315800015@qq.com）
+ * @LastEditTime: 2020-04-06 19:28:16
+ -->
+<!--components/writePhotosAlbum/index.wxml-->
+<view>
+  <view style="padding:20rpx">
+    <view style="line-height:1.5">说明：wx.saveImageToPhotosAlbum保存图片时，在安卓手机上会有一个提示授权的弹窗，有且只提醒一次。若用户点击了拒绝，再次点保存海报时就会进入fail。所以我们要通过检测scope.writePhotosAlbum的值来判断用户有没有授权下载图片的权限。若没有权限，就提示用户开启权限方可下载</view>
+    <view style="line-height:1.5">原文地址：http://www.yilingsj.com/xwzj/2020-04-06/weixin-scope-writePhotosAlbum.html</view>
+  </view>
+  <button class="button {{isDisabled ? 'is__disabled' : ''}}" bindtap="handleDownloadFile">生成海报（wx.downloadFile方法）</button>
+  <button class="button {{isDisabled ? 'is__disabled' : ''}}" bindtap="handleGetImageInfo">生成海报（wx.getImageInfo方法）</button>
+  <view wx-if="{{src!==''}}">
+    <image class="canvas__img" src="{{src}}" mode="widthFix" lazy-load="false">
+    </image>
+    <button class="button {{isDisabledSave ? 'is__disabled' : ''}}" bindtap="handleSaveImageNoVerification">保存海报（不验证权限）</button>
+    <button class="button {{isDisabledSave ? 'is__disabled' : ''}}" bindtap="handleSaveImageVerification" type="primary">保存海报（验证权限）</button>
+  </view>
+  <view
+    class="canvas"
+    hover-class="none"
+    hover-stop-propagation="false"
+  >
+    <canvas
+      canvas-id="my-canvas"
+      style="width:750rpx;height:670px;border:1px solid #f00"
+    ></canvas>
+  </view>
+</view>

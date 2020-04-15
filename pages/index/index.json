@@ -1,4 +1,6 @@
 {
   "usingComponents": {
-  }
+    "writePhotosAlbum-component": "/components/writePhotosAlbum/index"
+  },
+  "navigationBarTitleText": "scope.writePhotosAlbum检测保存相册权限"
 }
