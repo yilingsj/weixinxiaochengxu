@@ -1,6 +1,9 @@
 # weixinxiaochengxu
 微信小程序-日常开发爬坑记录
 
+## 新增一个3种方法实现长按保存图片到相册的demo
+分支：dev-longpress-to-save-the-picture-20200424
+
 ## 新增一个textarea在ios上存在bug的demo
 分支：dev-textarea-padding-bug-in-ios-20200414 
 
