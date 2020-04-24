@@ -1,0 +1,31 @@
+<!--
+ * @Description: 
+ * @Author: yilingsj（315800015@qq.com）
+ * @Date: 2020-04-24 21:13:25
+ * @LastEditors: yilingsj（315800015@qq.com）
+ * @LastEditTime: 2020-04-24 22:32:42
+ -->
+<!--components/longPressToSave/index.wxml-->
+<view class="page">
+  <view class="box">
+    <view class="title">方法一：image + show-menu-by-longpress </view>
+    <image show-menu-by-longpress src="{{src}}" mode="widthFix" />
+    <view wx:if="{{!isCanUse}}">
+      <view>当前设备的微信版本过低，不支持长按保存图片，请升级微信版本</view>
+      <view>客户端基础库版本：{{systemInfo.SDKVersion}}</view>
+      <view>微信版本号：{{systemInfo.version}}</view>
+      <view>操作系统及版本：{{systemInfo.system}}</view>
+    </view>
+  </view>
+  <view class="box">
+    <view class="title">方法二：wx.previewImage </view>
+    <button class="button" bindtap="handlePreviewImage">点我体验</button>
+    <button class="button" bindtap="handlePreviewImageBase64">点我体验（base64）</button>
+    <button class="button" bindtap="handlePreviewImage3">wx.getImageInfo+wx.previewImage</button>
+    <canvas canvas-id="canvasId" class="canvas"></canvas>
+  </view>
+  <view class="box">
+    <view class="title">方法三：bindlongpress 长按下方图片</view>
+    <image bindlongpress="handleLongPress" data-src="{{filepath}}"  src="{{filepath}}" mode="widthFix" />
+  </view>
+</view>

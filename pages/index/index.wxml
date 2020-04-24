@@ -7,4 +7,7 @@
  -->
 <!--index.wxml-->
 <view class="">
+<!-- 长按保存图片 start -->
+<longPressToSave></longPressToSave>
+<!-- 长按保存图片 end -->
 </view>

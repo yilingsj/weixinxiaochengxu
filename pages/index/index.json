@@ -1,4 +1,6 @@
 {
   "usingComponents": {
-  }
+    "longPressToSave": "/components/longPressToSave/index"
+  },
+  "navigationBarTitleText": "长按图片保存到相册"
 }
