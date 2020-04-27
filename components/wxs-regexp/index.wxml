@@ -1,0 +1,13 @@
+<!--components/wxs-regexp/index.wxml-->
+<!-- 引入格式化函数 adu 20200420 10:53:46 start -->
+<wxs src="../../utils/format.wxs" module="wxs"></wxs>
+<!-- 引入格式化函数 adu 20200420 10:53:46 end -->
+<view class="page">
+  <view>说明：在wxs中使用正则表达式的话需要使用getRegExp函数，否则会报错！</view>
+  <view style="margin-bottom: 100rpx">踩坑文章地址：http://www.yilingsj.com/xwzj/2020-04-27/weixin-wxs-regexp.html</view>
+  <view>价格：{{wxs.formatValue(price, 'price')}}元</view>
+  <view>佣金：{{wxs.formatValue(commission, 'commission')}}元</view>
+  <view>券　：{{wxs.formatValue(coupon, 'coupon')}}元</view>
+  <view>原价：{{wxs.formatValue(oldPrice, 'price')}}</view>
+
+</view>

@@ -1,0 +1,7 @@
+/* components/wxs-regexp/index.wxss */
+.page {
+  padding: 20rpx
+}
+view {
+  line-height: 1.8
+}

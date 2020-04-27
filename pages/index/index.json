@@ -1,4 +1,6 @@
 {
   "usingComponents": {
-  }
+    "wxsRegexp": "/components/wxs-regexp/index"
+  },
+  "navigationBarTitleText": "在WXS中正确使用正则表达式"
 }

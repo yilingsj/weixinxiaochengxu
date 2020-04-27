@@ -1,0 +1,64 @@
+/*
+ * @Description: 通用格式处理
+ * @Author: yilingsj（315800015@qq.com）
+ * @Date: 2020-04-20 10:33:42
+ * @LastEditors: yilingsj（315800015@qq.com）
+ * @LastEditTime: 2020-04-27 22:18:28
+ * @FilePath: \card_mp\xcxCard\utils\format.wxs
+ */
+/**
+ * @author: yilingsj（315800015@qq.com）
+ * @description: 格式化（价格、销量、佣金）
+ * @param {Number} value
+ * @param {String} type 类型
+ * @return {void}
+ * @Date: 2020-04-20 10:35:07
+ */
+function formatValue(value, type) {
+  if (typeof value === 'string') {
+    if (value.match('¥')) {
+      var reg = getRegExp('¥', 'g')
+      value = value.replace(reg, '')
+      // value = value.replace(/¥/g, '') // 错误的方法！
+    }
+  }
+  var result = value
+  switch (type) {
+    case 'price': // 普通价格
+      // 商品价格：当商品金额小于10000时，保留2位小数显示；大于等于10000元时，则显示为1.0万的格式，即保留1位小数
+      result = Number(value)
+      if (result < 10000) {
+        result = result.toFixed(2)
+      } else {
+        result = (result / 10000).toFixed(1) + '万'
+      }
+      break
+    case 'sold': // 已售
+      // 已售：当虚拟销小于10000件时，显示完全；当虚拟销量大于等于10000件，则显示为已售1.0万件的格式，即保留1位小数
+      result = Number(value)
+      if (result >= 10000) {
+        result = (result / 10000).toFixed(1) + '万'
+      }
+      break
+    case 'commission': // 佣金
+      // 佣金：当佣金小于10时，保留2位小数显示；大于等于10元时，保留1位有效数字；大于等于100时，保留为整数；大于等于1000时，显示为：赚¥999+
+      result = Number(value)
+      if (result < 10) {
+        result = result.toFixed(2)
+      } else if (result >= 10 && result < 100) {
+        result = result.toFixed(1)
+      } else if (result >= 100 && result < 1000) {
+        result = Math.floor(result)
+      } else {
+        return '999+'
+      }
+      break
+    case 'coupon': // 优惠券
+      result = Number(value / 100)
+      break
+  }
+  return result
+}
+module.exports = {
+  formatValue: formatValue
+}

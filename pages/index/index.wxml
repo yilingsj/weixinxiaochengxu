@@ -7,4 +7,7 @@
  -->
 <!--index.wxml-->
 <view class="">
+<!-- wxs中使用正则表达式的demo start -->
+<wxsRegexp></wxsRegexp>
+<!-- wxs中使用正则表达式的demo end -->
 </view>
