@@ -1,6 +1,9 @@
 # weixinxiaochengxu
 微信小程序-日常开发爬坑记录
 
+## 新增一个在wxs中使用正则表达式的demo
+分支：dev-wxs-regexp-20200427 
+
 ## 新增一个3种方法实现长按保存图片到相册的demo
 分支：dev-longpress-to-save-the-picture-20200424
 
