@@ -1,4 +1,6 @@
 {
   "usingComponents": {
-  }
+    "wxsSplit": "/components/wxs-split/index"
+  },
+  "navigationBarTitleText": "小数点前的数字比小数点后面的数字大"
 }

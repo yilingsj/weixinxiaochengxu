@@ -7,4 +7,7 @@
  -->
 <!--index.wxml-->
 <view class="">
+  <!-- 小数点前的数字比小数点后面的数字大 start -->
+  <wxsSplit></wxsSplit>
+  <!-- 小数点前的数字比小数点后面的数字大 start -->
 </view>

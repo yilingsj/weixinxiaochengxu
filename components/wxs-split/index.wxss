@@ -1,0 +1,23 @@
+/* components/wxs-split/index.wxss */
+.page {
+  padding: 20rpx
+}
+view {
+  line-height: 1.8;
+  font-size: 24rpx;
+}
+.box {
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #ccc
+}
+.title {
+  margin:0 auto 20rpx;
+}
+.price {
+  font-size: 24rpx;
+  color: #f00;
+  font-weight: bold;
+}
+.price__big {
+  font-size: 36rpx;
+}

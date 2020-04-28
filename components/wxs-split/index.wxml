@@ -1,0 +1,36 @@
+<!--components/wxs-split/index.wxml-->
+<!-- 引入格式化函数 adu 20200420 10:53:46 start -->
+<wxs src="../../utils/format.wxs" module="wxs"></wxs>
+<!-- 引入格式化函数 adu 20200420 10:53:46 end -->
+<view class="page">
+  <view class="box">
+    <view class="title">UI效果：</view>
+    <view class="price">
+      ¥<text class="price__big">{{wxs.formatValue(price, 'split')[0]}}</text>.<text>{{wxs.formatValue(price, 'split')[1]}}</text>
+    </view>
+  </view>
+  <view class="box">
+    <view class="title">未优化前：（原数值：{{price2}}）</view>
+    <view class="price">
+      ¥<text class="price__big">{{wxs.formatValue(price2, 'split')[0]}}</text>.<text>{{wxs.formatValue(price2, 'split')[1]}}</text>
+    </view>
+  </view>
+  <view class="box">
+    <view class="title">优化方案一：整数时不显示小数（原数值：{{price2}}）</view>
+    <view class="price">
+      ¥<text class="price__big">{{wxs.formatValue(price2, 'split')[0]}}</text><text wx:if="{{wxs.formatValue(price2, 'split')[1]}}">.</text><text>{{wxs.formatValue(price2, 'split')[1]}}</text>
+    </view>
+  </view>
+  <view class="box">
+    <view class="title">优化方案二：保留两位有效小数（不修改wxs中代码的情况下实现）（原数值：{{price3}}）</view>
+    <view class="price">
+      ¥<text class="price__big">{{wxs.formatValue(wxs.formatValue(price3, 'price'), 'split')[0]}}</text>.<text>{{wxs.formatValue(wxs.formatValue(price3, 'price'), 'split')[1]}}</text>
+    </view>
+  </view>
+  <view class="box">
+    <view class="title">优化方案二：保留两位有效小数（修改wxs中的代码，开启第62行 result = Number(result).toFixed(2).split('.') 和下面的注释即可）</view>
+    <!-- <view class="price">
+      ¥<text class="price__big">{{wxs.formatValue(price3, 'split')[0]}}</text>.<text>{{wxs.formatValue(price3, 'split')[1]}}</text>
+    </view> -->
+  </view>
+</view>
