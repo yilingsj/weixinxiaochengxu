@@ -1,6 +1,10 @@
 # weixinxiaochengxu
 微信小程序-日常开发爬坑记录
 
+## 新增一个在WXS中使用split实现金额小数点前的数比后面的大的demo
+分支：dev-wxs-split-20200428
+
+
 ## 新增一个在wxs中使用正则表达式的demo
 分支：dev-wxs-regexp-20200427 
 
