@@ -7,7 +7,9 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    audioSrc: 'https://card-cdn-test.5ifengdu.com/ali/audio/202002/11/1581416977486_8929949054.mp3' // 音频地址，必须是网络地址
+
   },
   //事件处理函数
   bindViewTap: function() {

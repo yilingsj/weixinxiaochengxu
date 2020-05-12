@@ -1,4 +1,6 @@
 {
   "usingComponents": {
-  }
+    "diyAudioPlayer": "/components/diyAudioPlayer/index"
+  },
+  "navigationBarTitleText": "开发一款DIY音乐播放器(未优化)"
 }

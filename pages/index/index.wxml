@@ -7,4 +7,7 @@
  -->
 <!--index.wxml-->
 <view class="">
+<!-- 音乐播放器 start -->
+<diyAudioPlayer audioSrc="{{audioSrc}}"></diyAudioPlayer>
+<!-- 音乐播放器 end -->
 </view>

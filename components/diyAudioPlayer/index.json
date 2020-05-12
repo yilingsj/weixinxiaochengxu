@@ -1,0 +1,5 @@
+{
+  "component": true,
+  "usingComponents": {},
+  "navigationBarTitleText": "可控制播放进度的音乐播放器(初级版)"
+}

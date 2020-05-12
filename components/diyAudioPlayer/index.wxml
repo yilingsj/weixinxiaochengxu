@@ -1,0 +1,36 @@
+<!--
+ * @Description: 
+ * @Author: yilingsj（315800015@qq.com）
+ * @Date: 2020-05-10 15:57:01
+ * @LastEditors: yilingsj（315800015@qq.com）
+ * @LastEditTime: 2020-05-12 20:14:22
+ -->
+<!--components/diyAudioPlayer/index.wxml-->
+<view class="my-audio">
+  <view class="audio-box">
+    <!-- 播放/暂停的图标 start -->
+    <image class="audio__status" src="{{(isPlay ? pauseSrc : playSrc)}}" mode="widthFix" bindtap="{{isPlay ? 'goPause' : 'goPlay'}}"></image>
+    <!-- 播放/暂停的图标 end -->
+    <view class="audio__content">
+      <view class="audio__progress">
+        <movable-area class="audio__progress">
+          <movable-view class="audio__progress_bar {{isCanplay ? '' : 'audio__progress_loading'}}" x="{{x}}" direction="horizontal" bindchange="bindchange" bindtouchmove="touchMove" bindtouchend="touchEnd" bindtouchstart="touchStart" animation="{{false}}" >
+            {{progress}}/{{total}}
+            <!-- 按住拖拽时的tips start -->
+            <view class="audio__progress_tips" wx:if="{{isTouchMove}}">{{progress}}/{{total}}</view>
+            <!-- 按住拖拽时的tips end -->
+          </movable-view>
+        </movable-area>
+        <!-- 已经播放的进度 start -->
+        <view class="audio__progress_current" wx:if="{{isProgress}}" style="width:{{x}}px"></view>
+        <!-- 已经播放的进度 end -->
+      </view>
+    </view>
+  </view>
+</view>
+<view>
+  文章地址：http://www.yilingsj.com/xwzj/2020-05-10/weixin-diyAudioPlayer.html
+</view>
+<view style="margin-top: 40rpx;">
+  优化版见：http://www.yilingsj.com/xwzj/2020-05-12/weixin-wxs-diyAudioPlayer.html
+</view>

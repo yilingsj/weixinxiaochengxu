@@ -1,26 +1,16 @@
 # weixinxiaochengxu
 微信小程序-日常开发爬坑记录
 
-## 新增一个可控制播放进度的音乐播放器(初级版)
+## 新增一个开发一款DIY音乐播放器(未优化版)
 分支：dev-diyAudioPlayer-20200510
 
-## 新增一个在WXS中使用split实现金额小数点前的数比后面的大的demo
-分支：dev-wxs-split-20200428
+说明：应公司业务需求，资讯文章中的音乐播放器需要有可拖拽播放进度的功能。因此，手动造了一个轮子。这是第一版，性能方面有待优化，优化见下一篇。
 
-## 新增一个在wxs中使用正则表达式的demo
-分支：dev-wxs-regexp-20200427 
+[gif演示](https://img.alicdn.com/imgextra/i4/759415648/O1CN01LCV7pa1rapZxPkRLV_!!759415648.gif)
+https://img.alicdn.com/imgextra/i4/759415648/O1CN01LCV7pa1rapZxPkRLV_!!759415648.gif
 
-## 新增一个3种方法实现长按保存图片到相册的demo
-分支：dev-longpress-to-save-the-picture-20200424
+踩坑文章地址：
+[微信小程序从入坑到放弃二十七：可控制播放进度的音乐播放器(初级版)](http://www.yilingsj.com/xwzj/2020-05-10/weixin-diyAudioPlayer.html)
 
-## 新增一个textarea在ios上存在bug的demo
-分支：dev-textarea-padding-bug-in-ios-20200414 
-
-## 新增一个兼容ios手机的底部评论框
-分支：dev-textarea-fixed-bottom-20200410
-
-## 新增一个使用wx.saveImageToPhotosAlbum保存图片到相册时检测权限的demo
-分支：dev-scope-writePhotosAlbum-20200406
-
-## 新增一个wx.downloadFile下载图片的demo
-分支：dev-downloadFile-20200404
+优化版文章地址：
+[微信小程序从入坑到放弃二十八：开发一款DIY音乐播放器(WXS优化版)](http://www.yilingsj.com/xwzj/2020-05-12/weixin-wxs-diyAudioPlayer.html)
