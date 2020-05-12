@@ -1,6 +1,9 @@
 # weixinxiaochengxu
 微信小程序-日常开发爬坑记录
 
+## 新增demo: 开发一款DIY音乐播放器(WXS优化版)
+分支：dev-wxs-diyAudioPlayer-20200512
+
 ## 新增一个可控制播放进度的音乐播放器(初级版)
 分支：dev-diyAudioPlayer-20200510
 
