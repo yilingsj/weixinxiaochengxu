@@ -1,0 +1,33 @@
+<!--components/wxs-diyAudioPlayer/index.wxml-->
+<!-- 引入WXS start -->
+<wxs src="./wxs-diyAudioPlayer.wxs" module="wxs"></wxs>
+<!-- 引入WXS end -->
+<view class="my-audio">
+  <view class="audio-box">
+    <!-- 播放/暂停的图标 start -->
+    <image class="audio__status" src="{{isPlay ? pauseSrc : playSrc}}" mode="widthFix"
+      bindtap="{{isPlay ? 'goPause' : 'goPlay'}}"></image>
+    <!-- 播放/暂停的图标 end -->
+    <view class="audio__content">
+      <view class="audio__progress">
+        <movable-area class="audio__progress-movable">
+          <movable-view class="audio__progress_bar {{isCanplay ? '' : 'audio__progress_loading'}}"
+            x="{{wxs.changeX(currentTime,durationValue,progressWidthValue)}}" direction="horizontal"
+            change:progresswidth="{{wxs.propProgressWidth}}" progresswidth="{{progressWidthValue}}"
+            change:duration="{{wxs.propDuration}}" duration="{{durationValue}}" bindtouchmove="{{wxs.touchMove}}"
+            bindtouchend="{{wxs.touchEnd}}" bindtouchstart="{{wxs.touchStart}}" animation="{{false}}">
+            {{wxs.formatTime(currentTime)}}/{{wxs.formatTime(durationValue)}}
+            <!-- 拖拽时显示tips start -->
+            <view class="audio__progress_tips" wx:if="{{isTouchMove}}">
+              {{wxs.formatTime(currentTime)}}/{{wxs.formatTime(durationValue)}}</view>
+            <!-- 拖拽时显示tips end -->
+          </movable-view>
+        </movable-area>
+        <!-- 已经播放的进度 start -->
+        <view class="audio__progress_current" wx:if="{{isProgress}}"
+          style="width:{{wxs.changeX(currentTime,durationValue,progressWidthValue)}}px"></view>
+        <!-- 已经播放的进度 end -->
+      </view>
+    </view>
+  </view>
+</view>

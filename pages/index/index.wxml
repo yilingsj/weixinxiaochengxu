@@ -7,4 +7,7 @@
  -->
 <!--index.wxml-->
 <view class="">
+  <!-- 开发一款DIY音乐播放器(WXS优化版) start -->
+  <wxs-diyAudioPlayer audioSrc="{{audioSrc}}"></wxs-diyAudioPlayer>
+  <!-- 开发一款DIY音乐播放器(WXS优化版) end -->
 </view>

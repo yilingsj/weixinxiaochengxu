@@ -1,3 +1,10 @@
+/*
+ * @Description: 
+ * @Author: yilingsj（315800015@qq.com）
+ * @Date: 2020-05-12 20:19:56
+ * @LastEditors: yilingsj（315800015@qq.com）
+ * @LastEditTime: 2020-05-12 20:33:13
+ */
 //index.js
 //获取应用实例
 const app = getApp()
@@ -7,10 +14,11 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    audioSrc: 'https://card-cdn-test.5ifengdu.com/ali/audio/202002/11/1581416977486_8929949054.mp3' // 音频地址，必须是网络地址
   },
   //事件处理函数
-  bindViewTap: function() {
+  bindViewTap: function () {
     wx.navigateTo({
       url: '../logs/logs'
     })
@@ -21,7 +29,7 @@ Page({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
       })
-    } else if (this.data.canIUse){
+    } else if (this.data.canIUse) {
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
       app.userInfoReadyCallback = res => {
@@ -43,7 +51,7 @@ Page({
       })
     }
   },
-  getUserInfo: function(e) {
+  getUserInfo: function (e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
