@@ -1,21 +1,63 @@
-/**index.wxss**/
-.userinfo {
+.page {
+}
+
+.page-content {
+  height: 450px;
+  background-color: #e0e0e0;
+}
+
+.pinglun-info {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 20rpx;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.pinglun__time {
+  flex: 1;
+  display: flex;
+  color: #ccc;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+.pinglun__delete {
+  color: #00f;
+  margin-left: 10rpx;
 }
 
-.usermotto {
-  margin-top: 200px;
+.pinglun-tool {
+  position: relative;
+}
+
+.pinglun-button {
+  background-color: #ccc;
+  color: #00f;
+  padding: 10rpx 20rpx;
+  border-radius: 10rpx;
+}
+
+.pinglun-lists {
+  position: absolute;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  padding: 10rpx;
+  flex-wrap: nowrap;
+  top: 0;
+  right: 100%;
+  font-size: 24rpx;
+  line-height: 1.3;
+  border-radius: 10rpx;
+  display: none;
+}
+
+.pinglun__link {
+  white-space: nowrap;
+  padding: 10rpx;
+  cursor: pointer;
+}
+
+.pinglun__link+.pinglun__link {
+  margin-left: 10rpx;
+}
+
+.pinglun-lists.is__show {
+  display: flex;
 }

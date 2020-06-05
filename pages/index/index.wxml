@@ -6,5 +6,18 @@
  * @LastEditTime: 2020-04-14 22:10:34
  -->
 <!--index.wxml-->
-<view class="">
+<view class="page" catchtap="handleCatchTap" bindtouchmove="handleTouchmove">
+  <view class="page-content">页面内容区 <view>文章地址：http://www.yilingsj.com/xwzj/2020-06-05/weixin-bindtap-and-catchtap.html</view></view>
+  <view class="pinglun-info" bindtap="handleInfo">
+    <view class="pinglun__time">23小时前<view class="pinglun__delete">删除</view>
+    </view>
+    <view class="pinglun-tool" catchtap="handleShowPingLun">
+      <view class="pinglun-button">...</view>
+      <view class="pinglun-lists {{isShow ? 'is__show' : ''}}">
+        <view class="pinglun__link" catchtap="handleCancel">取消</view>
+        <view class="pinglun__link" catchtap="handlePinglun">评论</view>
+      </view>
+    </view>
+  </view>
+  <view class="page-content">页面内容区,此处为了增加页面高度</view>
 </view>

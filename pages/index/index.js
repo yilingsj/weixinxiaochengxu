@@ -4,51 +4,35 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    isShow: false // 弹窗
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
+  // 点击时显示弹出评论功能
+  handleShowPingLun() {
+    console.log('点击弹出评论功能,bindtap会一直向上冒泡,catchtap不会', Date.now())
+    this.setData({
+      isShow: !this.data.isShow
     })
   },
-  onLoad: function () {
-    if (app.globalData.userInfo) {
+  // 禁止向上冒泡（非操作区域时关闭弹窗）
+  handleCatchTap() {
+    console.log('我是顶级的view.page标签', Date.now())
+    if (this.data.isShow) {
       this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
+        isShow: false
       })
     }
   },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
+  // 滑屏（页面滚动时也关闭弹窗）
+  handleTouchmove() {
+    this.handleCatchTap()
+  },
+  handleInfo() {
+    console.log('我是父级pinglun-info，现在被无辜触发了事件')
+  },
+  handlePinglun() {
+    console.log('我是评论')
+  },
+  handleCancel() {
+    console.log('我是取消功能')
   }
 })
