@@ -1,6 +1,9 @@
 # weixinxiaochengxu
 微信小程序-日常开发爬坑记录
 
+## 新增demo：冒泡事件bindtap和catchtap的区别
+分支：dev-bindtap-and-catchtap-20200605
+
 ## 新增demo: 开发一款DIY音乐播放器(WXS优化版)
 分支：dev-wxs-diyAudioPlayer-20200512
 
