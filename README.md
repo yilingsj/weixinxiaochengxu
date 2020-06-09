@@ -1,6 +1,9 @@
 # weixinxiaochengxu
 微信小程序-日常开发爬坑记录
 
+## 新增demo：wx.pageScrollTo实现页面滚动到指定位置
+分支：dev-wx-pageScrollTo-20200609
+
 ## 新增demo：冒泡事件bindtap和catchtap的区别
 分支：dev-bindtap-and-catchtap-20200605
 
