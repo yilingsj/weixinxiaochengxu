@@ -130,13 +130,13 @@ Component({
     },
     /**
      * @author: yiling
-     * @description: 失去焦点
+     * @description: 失去焦点（安卓机软键盘右上角的小三角会触发）
      * @return {void}
      * @Date: 2019-12-19
      */
     handleEvaluationBlur() {
       if (Date.now() > this.data.focusTime && this.data.focusTime !== 0) {
-        // this.handleClose()
+        this.handleClose()
       }
     },
     /**
