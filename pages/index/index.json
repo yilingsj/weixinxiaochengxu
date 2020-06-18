@@ -1,4 +1,6 @@
 {
   "usingComponents": {
-  }
+    "textareaFixedBottom": "/components/textarea-fixed-bottom/index"
+  },
+  "navigationBarTitleText": "wx.pageScrollTo实现评论定位功能"
 }

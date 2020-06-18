@@ -1,0 +1,79 @@
+/* components/textarea-fixed-bottom/index.wxss */
+/* 评论框弹层 adu 2019-12-16 start*/
+.popup-evaluation__bg {
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: 66666;
+  opacity: 0;
+  min-height: 100vh;
+}
+
+.popup-evaluation-wrap {
+  padding: 20rpx;
+  box-sizing: border-box;
+  background: #fff;
+  position: absolute;
+  top: 100%;
+  transition: .15s;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.popup-evaluation__body {
+  position: relative;
+}
+
+.popup-evaluation__foot {
+  position: relative;
+  padding: 20rpx 0 0;
+  text-align: right;
+}
+
+.popup-evaluation__textatrea {
+  background: #f5f5f5;
+  width: 100%;
+  height: 80px;
+  border-radius: 10rpx;
+  padding: 16rpx;
+  box-sizing: border-box
+}
+
+/* 修复ios的padding bug 注：苹果手机中textarea自带会带"填充"且是小值为12 start */
+.textatrea_ios_bug {
+  padding: 4rpx;
+}
+
+/* 修复ios的padding bug end */
+.popup-evaluation__length {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 30rpx 0;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.button_theme_primary {}
+
+.popup-evaluation__button {
+  display: inline-block;
+  font-size: 32rpx;
+  padding: 20rpx;
+  line-height: 1;
+  border-radius: 10rpx;
+  margin-bottom: 0;
+}
+
+/* 获取焦点时的样式 start */
+.is__show {
+  top: 0;
+  opacity: 1;
+  transition: .35s;
+}
+
+/* 获取焦点时的样式 end */
+/* 评论框弹层 adu 2019-12-16 end*/
