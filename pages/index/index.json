@@ -1,4 +1,6 @@
 {
   "usingComponents": {
-  }
+    "textareaFixedBottom": "/components/textarea-fixed-bottom/index"
+  },
+  "navigationBarTitleText": "scroll-view组件实现评论后页面滚动到指定位置"
 }

@@ -4,51 +4,167 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
-  },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+    popupEvaluation: {
+      isShow: false, // 评论框弹层弹窗是否显示
+      id: null, // id
+      typeName: '', // 类型：商城 / 资讯 / 名片
+      isClear: false // 是否清空上次的数据
+    },
+    evaluationData: [], // 评论数据
+    paddingHeight: '', // 页面需要填充的高度，输入框获取焦点时用到
+    scrollViewHeight: '', // 滚动区域高度
+    scrollIntoView: '' // 滚动的节点
   },
   onLoad: function () {
-    if (app.globalData.userInfo) {
+    this.initData() // 新增：未对接接口时，初始化一堆数据便于视图观察
+    this.getDom('.page-footer', res => {
+      const windowHeight = wx.getSystemInfoSync().windowHeight // 可使用窗口高度，单位px
       this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
+        scrollViewHeight: windowHeight - res[0].height + 'px' // 设置scroll-view的高度
+      });
+    });
+  },
+  /**
+   * @author: yilingsj（315800015@qq.com）
+   * @description: 滚动到最新评论（第一条）
+   * @return {void}
+   * @Date: 2020-06-18 17:47:27
+   */
+  pageScrollFirst() {
+    this.setData({
+      scrollIntoView: 'evaluation-wrap'
+    });
+  },
+  /**
+   * @author: yilingsj（315800015@qq.com）
+   * @description: 滚动到最后一条评论的位置
+   * @return {void}
+   * @Date: 2020-06-18 17:47:27
+   */
+  pageScrollBottom() {
+    this.setData({
+      scrollIntoView: 'evaluation-end'
+    });
+  },
+  /**
+   * @author: adu（duhw@5ifengdu.com）
+   * @description: 评论数据
+   * @param {Object} event 元素本身
+   * @return {void}
+   * @Date: 2020-04-10 15:24:45
+   */
+  myeventEvaluationData(event) {
+    let {
+      isShow,
+      typeName,
+      content,
+      id,
+      keyHeight,
+      domHeight
+    } = event.detail;
+    if (typeName) { // 点击了发布评论按钮
+      wx.showLoading({
+        title: '发布中...'
+      });
+      switch (typeName) {
+        case 'infomation': // 资讯
+          console.log('资讯id=', id, ';评论内容=', content)
+          break;
+        case 'mall': // 商城
+          console.log('商品id=', id, ';评论内容=', content)
+          break;
+        case 'card': // 名片的评论
+          console.log('名片的评论id=', id, ';评论内容=', content)
+          break;
+        default:
+          break;
       }
+      // 此处的延迟是模拟发送数据，真实场景应在上面的switch中进行
+      setTimeout(() => {
+        let editEvaluationData = this.data.evaluationData;
+        const data = {
+          name: '最新评论' + (this.data.evaluationData.length + 1),
+          text: content,
+          type: typeName,
+          time: Date.now()
+        };
+        editEvaluationData.splice(0, 0, data);
+        this.setData({
+          'popupEvaluation.isShow': false,
+          'popupEvaluation.isClear': true,
+          evaluationData: editEvaluationData,
+          paddingHeight: ''
+        });
+        this.pageScrollFirst(); /* 新增：滚动到最新评论处 */
+        wx.showLoading({
+          title: '发布成功',
+        });
+        setTimeout(() => {
+          wx.hideLoading();
+        }, 500);
+      }, 1000);
     } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
+      if (keyHeight) { // 软键盘弹起时
+        this.setData({
+          paddingHeight: domHeight / 2 + keyHeight
+        })
+        this.pageScrollBottom() // 滚动到最后一条评论
+      } else {
+        this.setData({
+          'popupEvaluation.isShow': isShow,
+          'popupEvaluation.isClear': false,
+          paddingHeight: '' // 清空值
+        })
+      };
     }
   },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
+  /**
+   * @author: yilingsj（315800015@qq.com）
+   * @description: 点击时显示评论组件
+   * @return {void}
+   * @Date: 2020-04-10 21:59:38
+   */
+  handleIsShowComment() {
     this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
+      'popupEvaluation.isShow': true,
+      'popupEvaluation.id': 0, // id为动态，请修改
+      'popupEvaluation.typeName': 'card', // typeName也为动态，请修改
+      'popupEvaluation.isClear': this.data.popupEvaluation.isClear
+    });
+  },
+  /**
+   * @author: yilingsj（315800015@qq.com）
+   * @description: 获取dom信息
+   * @param {String} name name
+   * @param {Function} callback 回调
+   * @return {void}
+   * @Date: 2020-02-06 16:44:24
+   */
+  getDom(name, callback) {
+    let query = wx.createSelectorQuery().in(this);
+    query.select(name).boundingClientRect();
+    query.exec(res => {
+      callback && callback(res);
+    });
+  },
+  /**
+   * @author: yilingsj（315800015@qq.com）
+   * @description: 初始化一堆假数据
+   * @return {void}
+   * @Date: 2020-06-18 18:25:34
+   */
+  initData() {
+    let data = []
+    for (let i = 0; i < 20; i++) {
+      data.push({
+        name: '佚名' + (parseInt(i) + 1),
+        text: '第' + (parseInt(i) + 1) + '条评论',
+        type: '资讯',
+        time: Date.now()
+      });
+    }
+    this.setData({
+      evaluationData: data
+    });
   }
 })

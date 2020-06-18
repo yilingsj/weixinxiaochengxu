@@ -1,21 +1,86 @@
 /**index.wxss**/
-.userinfo {
+.page {
   display: flex;
   flex-direction: column;
+}
+
+.page-content {
+  flex: 1;
+}
+
+.page-module {
+  padding: 20rpx;
+  height: 360px;
+  background-color: #ccc;
+}
+
+.page-footer {
+  position: relative;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 20rpx;
+  background-color: #fff;
+  box-shadow: 0 -1px 15px 0 rgba(0, 0, 0, .04);
+}
+
+/* 评论列表 start */
+.evaluation-wrap {
+  padding: 20rpx;
+}
+
+.evaluation__item {
+  display: flex;
   align-items: center;
+  border-bottom: 1rpx solid #ccc;
+  padding: 20rpx 0;
+  font-size: 24rpx;
+  line-height: 1.2;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
+.evaluation__content {
+  flex: 1;
+}
+
+.evaluation__avatar {
+  width: 100rpx;
+  height: 100rpx;
   border-radius: 50%;
+  background-color: #ccc;
+  margin-right: 20rpx;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+.evaluation__name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 32rpx;
+  margin-bottom: 10rpx;
 }
 
-.usermotto {
-  margin-top: 200px;
+.evaluation__time {
+  color: #ccc;
+  font-size: 24rpx
 }
+
+.evaluation-end {
+  height: 0;
+  font-size: 0;
+  background-color: #999;
+}
+
+/* 评论列表 end */
+
+/* 评论框 adu 20200408 start */
+
+.commentContent {
+  border-radius: 50rpx;
+  border: 1px solid #f0f0f0;
+  line-height: 2;
+  font-size: 24rpx;
+  padding: 20rpx;
+  color: #999;
+
+}
+
+/* 评论框 adu 20200408 end */
