@@ -1,6 +1,9 @@
 # weixinxiaochengxu
 微信小程序-日常开发爬坑记录
 
+## 新增demo：scroll-view组件实现评论前后页面滚动到指定评论处的功能
+分支：dev-scroll-view-scrollIntoView-20200618
+
 ## 新增demo：wx.pageScrollTo实现页面滚动到指定位置
 分支：dev-wx-pageScrollTo-20200609
 
