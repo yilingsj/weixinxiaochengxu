@@ -1,0 +1,27 @@
+<!--
+ * @Description: 
+ * @Author: yilingsj（315800015@qq.com）
+ * @Date: 2020-04-10 21:15:09
+ * @LastEditors: yilingsj（315800015@qq.com）
+ * @LastEditTime: 2020-06-19 22:44:18
+ -->
+<!--components/textarea-fixed-bottom/index.wxml-->
+<view class="popup-evaluation__bg {{ info.isShow === true ? 'is__show' : '' }}" catchtap="handleClose"
+  catchtouchmove="handleEvaluationtouchmove">
+  <view class="popup-evaluation-wrap" catchtap="handleEvaluationCatchTap" style="top:{{ focusTop }};">
+    <view class="popup-evaluation__body">
+      <textarea name="evaluation"
+        class="popup-evaluation__textatrea {{ platform === 'ios' ? 'textatrea_ios_bug' : '' }}"
+        maxlength="{{ maxLength }}" focus="{{ info.isShow }}" bindfocus="handleEvaluationFocus"
+        bindinput="handleEvaluationInput" bindconfirm="handleEvaluationConfirm" bindblur="handleEvaluationBlur"
+        show-confirm-bar="{{ false }}" bindlinechange="bindlinechange" auto-height="{{ true }}"
+        adjust-position="{{ false }}" value="{{ commentsText }}" fixed="{{ true }}"></textarea>
+    </view>
+    <view class="popup-evaluation__foot">
+      <view class="popup-evaluation__length">{{ commentsText.length }} / {{ maxLength }}</view>
+      <button class="popup-evaluation__button button_theme_primary" type="primary" catchtap="handleEvaluationRelease">
+        发表评论
+      </button>
+    </view>
+  </view>
+</view>

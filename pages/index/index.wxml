@@ -3,8 +3,35 @@
  * @Author: yilingsj（315800015@qq.com）
  * @Date: 2020-04-04 16:55:23
  * @LastEditors: yilingsj（315800015@qq.com）
- * @LastEditTime: 2020-04-14 22:10:34
+ * @LastEditTime: 2020-06-19 22:49:00
  -->
 <!--index.wxml-->
+
 <view class="">
+  <view style="padding:20rpx">
+    <view style="line-height:1.5">
+      此demo的功能：
+      <view>评论框可根据内容自动增高，且不会被系统软键盘遮挡。</view>
+    </view>
+    <view style="line-height:1.5" class="mb-20">
+      原文地址：http://www.yilingsj.com/xwzj/2020-06-20/weixin-textarea-autoHeight.html
+    </view>
+  </view>
+  <!-- 评论列表 start -->
+  <view class="evaluation-wrap">
+    <view class="evaluation__item" wx:for="{{evaluationData}}" wx:key="index">
+      <view class="evaluation__text">{{item.text}}</view>
+      <view class="evaluation__time">{{item.time}}</view>
+    </view>
+  </view>
+  <!-- 评论列表 end -->
+  <!-- 固定在底部的输入框 start -->
+  <view class="commentContent" bindtap="handleIsShowComment">
+    <view>写评论...</view>
+  </view>
+  <!-- 弹层评论框 start -->
+  <textareaAutoHeight info="{{popupEvaluation}}" bind:myeventEvaluationData="myeventEvaluationData">
+  </textareaAutoHeight>
+  <!-- 弹层评论框 end -->
+  <!-- 固定在底部的输入框 end -->
 </view>

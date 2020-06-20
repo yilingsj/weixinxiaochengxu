@@ -1,4 +1,6 @@
 {
   "usingComponents": {
-  }
+    "textareaAutoHeight": "/components/textarea-autoHeight/index"
+  },
+  "navigationBarTitleText": "兼容ios且自动增高的底部评论框"
 }

@@ -1,21 +1,36 @@
 /**index.wxss**/
-.userinfo {
+/* 评论列表 start */
+.evaluation-wrap {
+  padding: 20rpx;
+}
+
+.evaluation__item {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  border-bottom: 1rpx solid #ccc;
+  padding: 20rpx 0;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.evaluation__time {
+  color: #ccc;
+  font-size: 24rpx
 }
 
-.userinfo-nickname {
-  color: #aaa;
+/* 评论列表 end */
+
+/* 评论框 adu 20200408 start */
+.commentContent {
+  position: fixed;
+  bottom: 20rpx;
+  left: 20rpx;
+  right: 20rpx;
+  font-size: 24rpx;
+  border: 2rpx solid #f0f0f0;
+  border-radius: 34rpx;
+  padding: 20rpx;
+  color: #999;
+  line-height: 24rpx;
 }
 
-.usermotto {
-  margin-top: 200px;
-}
+/* 评论框 adu 20200408 end */
