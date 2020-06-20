@@ -1,6 +1,9 @@
 # weixinxiaochengxu
 微信小程序-日常开发爬坑记录
 
+## 新增demo: 兼容ios且自动增高的底部评论框
+分支：dev-textarea-autoHeight-20200620
+
 ## 新增demo：scroll-view组件实现评论前后页面滚动到指定评论处的功能
 分支：dev-scroll-view-scrollIntoView-20200618
 
