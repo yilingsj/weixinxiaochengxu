@@ -1,6 +1,9 @@
 # weixinxiaochengxu
 微信小程序-日常开发爬坑记录
 
+## 新增demo: 修改LocalHistory插件的存储路径
+分支：dev-localHistory-20200625
+
 ## 新增demo: 兼容ios且自动增高的底部评论框
 分支：dev-textarea-autoHeight-20200620
 
