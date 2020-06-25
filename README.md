@@ -1,41 +1,13 @@
 # weixinxiaochengxu
 微信小程序-日常开发爬坑记录
 
-## 新增demo: 兼容ios且自动增高的底部评论框
-分支：dev-textarea-autoHeight-20200620
+## 新增demo: 修改LocalHistory插件的存储路径
+分支：dev-localHistory-20200625
 
-## 新增demo：scroll-view组件实现评论前后页面滚动到指定评论处的功能
-分支：dev-scroll-view-scrollIntoView-20200618
+问题描述：当vscode中安装了Local History插件，在开发微信小程序项目时，若wxml中的代码写错了，小程序会一直停留在错误信息上，即使已经修改正确了代码。
 
-## 新增demo：wx.pageScrollTo实现页面滚动到指定位置
-分支：dev-wx-pageScrollTo-20200609
+  
+[视频演示](https://cloud.video.taobao.com//play/u/759415648/p/1/e/6/t/1/270305822789.mp4)
 
-## 新增demo：冒泡事件bindtap和catchtap的区别
-分支：dev-bindtap-and-catchtap-20200605
-
-## 新增demo: 开发一款DIY音乐播放器(WXS优化版)
-分支：dev-wxs-diyAudioPlayer-20200512
-
-## 新增一个可控制播放进度的音乐播放器(初级版)
-分支：dev-diyAudioPlayer-20200510
-
-## 新增一个在WXS中使用split实现金额小数点前的数比后面的大的demo
-分支：dev-wxs-split-20200428
-
-## 新增一个在wxs中使用正则表达式的demo
-分支：dev-wxs-regexp-20200427 
-
-## 新增一个3种方法实现长按保存图片到相册的demo
-分支：dev-longpress-to-save-the-picture-20200424
-
-## 新增一个textarea在ios上存在bug的demo
-分支：dev-textarea-padding-bug-in-ios-20200414 
-
-## 新增一个兼容ios手机的底部评论框
-分支：dev-textarea-fixed-bottom-20200410
-
-## 新增一个使用wx.saveImageToPhotosAlbum保存图片到相册时检测权限的demo
-分支：dev-scope-writePhotosAlbum-20200406
-
-## 新增一个wx.downloadFile下载图片的demo
-分支：dev-downloadFile-20200404
+踩坑文章地址：
+[微信小程序从入坑到放弃三十三：当LocalHistory遇上微信小程序开发者工具，坑你我们是认真的！](http://www.yilingsj.com/xwzj/2020-06-25/weixin-local-history.html)

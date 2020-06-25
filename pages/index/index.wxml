@@ -1,10 +1,19 @@
 <!--
  * @Description: 
  * @Author: yilingsj（315800015@qq.com）
- * @Date: 2020-04-04 16:55:23
+ * @Date: 2020-06-20 12:03:03
  * @LastEditors: yilingsj（315800015@qq.com）
- * @LastEditTime: 2020-04-14 22:10:34
- -->
-<!--index.wxml-->
-<view class="">
+ * @LastEditTime: 2020-06-25 22:01:01
+-->
+<!-- index.wxml -->
+<view class="" style="padding:20rpx;line-height: 1.5;">
+  <view>问题描述：当vscode中安装了Local History插件，在开发微信小程序项目时，若wxml中的代码写错了，小程序会一直停留在错误信息上，即使已经修改正确了代码。</view>
+  <view>解决方案：</view>
+  <view>1、【不推荐】删除修改的文件+清空缓存</view>
+  <view>2、【推荐】修改配置文件.vscode/settings.json：
+    {
+    "local-history.path": "D:\\demo-node\\xiaochengxu" // 存放在项目外
+    }
+  </view>
+  <view>原文地址：http://www.yilingsj.com/xwzj/2020-06-25/weixin-local-history.html</view>
 </view>
